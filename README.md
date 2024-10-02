@@ -21,7 +21,7 @@ My Roadmap is a project that allows users to dynamically add, edit, and track go
    To delete an unnecessary group, leave all input fields in that group empty. The group will be removed automatically after clicking the `Finish` button.
 
 # Visual Design
-The primary design template was inspired by the [TON website’s roadmap page](https://ton.org/en/roadmap). The main color palette and fonts were also borrowed from the [brand assets page](https://ton.org/en/brand-assets). The web application is fully responsive and adapts to various screen sizes. Below are images showcasing how it performs on different devices.
+The primary design template was inspired by the [TON website’s roadmap page](https://ton.org/en/roadmap). The main color palette and fonts were also borrowed from the [brand assets page](https://ton.org/en/brand-assets). The web application is fully responsive and adapts to various screen sizes. Below are videos showcasing how it performs on different devices.
 
 Image...
 
