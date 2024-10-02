@@ -86,7 +86,7 @@ body {
 }
 
 .menu-img {
-    background-image: url("/img/desktop.png");
+    background-image: url("img/desktop.png");
     width: 100%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -251,7 +251,7 @@ input:-webkit-autofill:active {
 /* Mobile version */
 @media (max-width: 768px) {
     .menu-img {
-        background-image: url("/img/mobile.png");
+        background-image: url("img/mobile.png");
         height: 180px;
     }
 
