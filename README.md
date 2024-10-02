@@ -6,7 +6,19 @@ My Roadmap is a project that allows users to dynamically add, edit, and track go
 ...
 
 # Usage Guide
-...
+1. **Creating a Roadmap**: 
+   Click the `Create Roadmap` button. Once clicked, the button will change to `Done`. A timeline group will appear on the screen, containing input fields for entering a title and a detailed description.
+
+   **Note**: The title field cannot be left empty; otherwise, a red border will appear around the field, indicating an error. The description field can be left empty, but the title is limited by the number of characters and can occupy a maximum of two lines. If the description height exceeds the height of the line connecting this timeline group to the next, the line will automatically adjust to ensure proper spacing between the groups.
+
+3. **Adding a New Timeline Group**: 
+   To add a new group, click the `plus (+) icon`. A new timeline group with input fields for the title and description will appear, connected to the previous group by a continuous line.
+
+4. **Saving Data**: 
+   After entering your data, click the `Finish` button. The input data will be validated and saved. The `Finish` button will automatically change to `Edit`, and the information will be stored in cookies for future use.
+
+5. **Deleting a Timeline Group**: 
+   To delete an unnecessary group, leave all input fields in that group empty. The group will be removed automatically after clicking the `Finish` button.
 
 # Visual Design
 ...
