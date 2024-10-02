@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>My Roadmap</title>
+  </head>
+  <body>
+    <main class="roadmap-page">
+      <div class="menu-page">
+        <div class="menu-container">
+          <div class="menu-section">
+            <p class="headline-title">Your Roadmap</p>
+            <p class="headline-description">
+              You can explore your history by creating your own roadmap.
+            </p>
+            <button id="CreateButton" class="buttons button-create">
+              Create Roadmap
+            </button>
+          </div>
+          <div class="menu-img"></div>
+        </div>
+      </div>
+      <!-- Timeline -->
+      <div class="timeline-container">
+        <!-- Timeline Section -->
+        <div class="timeline-section">
+          <!-- Individual Group -->
+          <div class="timeline-group">
+            <!-- History Point -->
+            <div class="history-point">
+              <div id="circle" class="circle"></div>
+              <div id="line" class="line"></div>
+              <svg
+                class="add-icon"
+                id="add_icon"
+                width="32px"
+                height="32px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g id="Edit / Add_Plus_Circle">
+                    <path
+                      id="Vector"
+                      d="M8 12H12M12 12H16M12 12V16M12 12V8M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"
+                      stroke="#000000"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <!-- Input Section -->
+            <div class="input-section">
+              <textarea
+                id="enter-name-text"
+                class="enter-name-text"
+                type="text"
+                placeholder="Title..."
+                rows="1"
+                cols="30"
+              ></textarea>
+              <textarea
+                id="enter-description-text"
+                class="enter-description-text"
+                type="text"
+                placeholder="Describe this waypoint..."
+                rows="3"
+                cols="40"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="setup-section">
+          <button id="SaveButton" class="buttons button-save">Finish</button>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/save_button.js"></script>
+    <script type="module" src="js/add_button.js"></script>
+  </body>
+</html>

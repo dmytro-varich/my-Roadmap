@@ -1,0 +1,308 @@
+@font-face {
+    font-family: 'InterVariable';
+    src: url('inter/Inter-400.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'InterVariable2';
+    src: url('inter/Inter-600.woff2') format('woff2');
+    /* font-weight: 700; */
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    overflow-x: hidden; /* Убирает горизонтальный скролл */
+    box-sizing: border-box; /* Это убедится, что паддинги и границы включены в ширину и высоту элемента */
+    font-size: 16px; /* base font-size */
+}
+
+.menu-page {
+    background-color: #F7F9FB;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: 7.1fr 4.9fr;
+    max-width: calc(100% - 80px);
+    min-width: calc(100% - 80px);
+    margin: 0 auto;
+    width: 80%;
+    /* flex-direction: row; */
+    /* /* justify-content: center; */
+    padding-bottom: 7%;
+    padding-top: 7%;
+    gap: 20%;
+    margin-bottom: 5%;
+}
+
+.menu-container .menu-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    text-align: unset;
+    /* margin-left: 10%; */
+}
+
+.menu-container .headline-title {
+    color: black;
+    font-size: 3rem; /* 48px */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-bottom: 3%;
+}
+
+.menu-container .headline-description {
+    color: #191f2f;
+    font-size: 1.125rem ; /* 18px */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.buttons {
+    color: white;
+    background: #0098ea;
+    /* background: #00ea62; */
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 24px;
+    cursor: pointer;
+    padding: 14px 28px;
+    border: none;
+    margin-top: 3%;
+    transition: all 0.3s ease;
+}
+
+.menu-container .button-create:hover {
+    background: #00a6ff;
+    /* background: #00ea77; */
+}
+
+.menu-img {
+    background-image: url("\\img\\desktop.png");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    height: 232px;
+}
+
+.timeline-container  {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+
+.setup-section {
+    display: grid;
+    /* margin-top: 5%; */
+    margin-right: -46%; 
+}
+
+.timeline-section {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 150px; */
+    margin: 0 auto;
+}
+
+.timeline-group {
+    display: flex;
+    align-items: baseline;
+    justify-content: center; 
+    /* margin-bottom: 20px; */
+}
+
+.history-point {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: center;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 7%;
+}
+
+.circle {
+    width: 8px;
+    height: 8px;
+    background-color: #07acff;
+    border-radius: 50%;
+    display: none;
+}
+
+.line {
+    display: none;
+    background-color: #ecf1f7;
+    width: 2px;
+    height: 110px;
+    margin: 0 20px;
+    transition: height 0.5s ease-in-out;
+}
+
+.add-icon-container {
+    height: 32px;
+    width: 42px;
+}
+
+.add-icon {
+    display: none;
+    cursor: pointer;
+    margin: 0 auto;
+    /* min-width: 42px; */
+    margin-top: -5%;
+}
+
+.enter-name-text {
+    display: none;
+    border: 2px solid transparent;
+    font-size: 1.25rem; /* 20px */
+    font-family: InterVariable2, sans-serif;
+    /* height: 26px; */
+    line-height: 26px;
+    letter-spacing: -.17px;
+    font-weight: 600;
+    color: #04060b;
+    /* width: 259.25px; */
+    /* overflow-wrap: break-word;  */
+    resize: none;
+    overflow: hidden;
+    /* white-space: pre-wrap; */
+    padding: 0; 
+    outline: none;
+    width: 13.5vw;
+    width: 15vw;
+}
+
+.enter-name-text::placeholder {
+    font-family: InterVariable1, sans-serif;
+    font-weight: 500; 
+    color: #888; 
+    padding: 0;
+}
+
+.enter-name-text:focus {
+    border: 2px solid transparent;
+    outline: none;
+}
+
+.highlight {
+    background-color: #f7f9fb; 
+}
+
+.enter-description-text {
+    display: none;
+    resize: none;
+    border: none; 
+    font-family: InterVariable,sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem; /* 18px */
+    line-height: 26px;
+    letter-spacing: -.14px;
+    color: #191F2F;
+    width: 760px;
+    overflow: hidden;
+    /* margin-left: 10px; */
+    width: 35vw;
+}
+
+.enter-description-text:focus {
+    outline: none;
+    border: none; 
+}
+
+.buttons.button-save {
+    display: none;
+    /* background: #eac300; */
+    background: #00ea4a;
+    margin-top: 30px;
+    /* margin-top: 3%; */
+    transition: all 0.3s ease;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important; /* Убираем задний фон */
+    -webkit-text-fill-color: #000 !important; /* Цвет текста */
+    transition: background-color 5000s ease-in-out 0s; /* Трюк для сохранения цвета фона */
+}
+
+.enter-name-text:focus,
+.enter-name-text:focus-visible,
+.enter-name-text:active {
+    outline: none;
+    border: 2px solid transparent;
+}
+
+/* Mobile version */
+@media (max-width: 768px) {
+    .menu-img {
+        background-image: url("\\img\\mobile.png");
+        height: 180px;
+    }
+
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        /* padding-top: 50px; */
+        max-width: calc(100% - 80px);
+        min-width: calc(100% - 80px);
+    }
+
+    .menu-section {
+        text-align: center;
+    }
+
+    .timeline-group {
+        padding-left: calc(var(--mobileGridGap) / 2* 1px);
+        padding-right: calc(var(--mobileGridGap) / 2* 1px);
+        margin: 0 auto; /* Центрирование */
+        width: 100%
+    }
+
+    .input-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .enter-name-text {
+        /* font-size: 1.155rem;  */
+        /* width: 354.4px; */
+        width: 95%;
+    }
+
+    .enter-description-text {
+        margin-left: 0;
+        /* margin-top: 10px; */
+        margin-top: 1%;
+        font-size: 1.125rem;
+        /* width: 354.4px; */
+        width: 95%;
+    }
+
+    .line {
+        height: 130px;
+    }
+
+}
+
+@media (hover: hover) {
+    .button-create:hover {
+        background: #0098ea;
+    }
+}
