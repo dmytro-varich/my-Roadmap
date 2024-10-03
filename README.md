@@ -3,7 +3,28 @@
 My Roadmap is a project that allows users to dynamically add, edit, and track goals, milestones, and events through an intuitive interface. Unlike static roadmaps that require manual HTML updates, this project offers real-time editing and saves progress using cookies for persistent data storage. It’s designed to explore modern frontend technologies like HTML, CSS, JavaScript, and cookie management, providing a flexible and responsive solution for personal or organizational planning. The overall design and style are inspired by the roadmap template of the [TON organization](https://ton.org/en).
 
 # Overview
-...
+The project consists of one HTML file, one CSS file, and four JavaScript files. The HTML file, named `index.html`, contains the main elements of the site, including the layout and structure of the web application. The `style.css` file is responsible for styling all the elements, linking them to the appropriate styles.
+
+The primary element on the page is the **timeline group**. When a roadmap is first created, one initial group appears. This group includes the following elements:
+
+- Input fields for the **title** and **description**.
+- A **history point**, which visually represents a key event on the timeline.
+- A **line** connecting the event groups on the timeline.
+- An **add icon**, which allows the user to add a new group to the timeline.
+
+When the user clicks the **"Create Roadmap"** button, the first timeline group, with all the aforementioned elements, appears on the screen, allowing the user to start entering information about goals and milestones.
+
+The project uses four JavaScript files: `index.js`, `add_button.js`, `save_button.js`, and `cookieUtils.js`. Each file handles a specific aspect of the site's logic, ensuring that the code remains clean, organized, and easy to maintain.
+
+- **`index.js`** — This is the core file that contains the overall logic of the site. It manages interactions between different elements on the page and how they respond to user actions.
+
+- **`add_button.js`** — This file handles the logic for adding new timeline groups. It controls the display of new elements and adjusts the timeline’s length when the group of events grows larger.
+
+- **`save_button.js`** — Responsible for saving data after the user clicks the **"Finish"** button. It validates the input and stores the data in local storage or cookies for later use.
+
+- **`cookieUtils.js`** — Contains functions for working with cookies. It allows for saving, reading, and deleting data in cookies, ensuring the timeline’s state and user actions are preserved.
+
+Splitting functionality across multiple files helps avoid overloading a single file with too much logic and keeps the code more flexible and scalable.
 
 # Usage Guide
 1. **Creating a Roadmap**: 
