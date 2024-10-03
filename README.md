@@ -44,6 +44,8 @@ Splitting functionality across multiple files helps avoid overloading a single f
 # Visual Design
 The primary design template was inspired by the [TON website’s roadmap page](https://ton.org/en/roadmap). The main color palette and fonts were also borrowed from the [brand assets page](https://ton.org/en/brand-assets). The web application is fully responsive and adapts to various screen sizes. 
 
+![image](https://github.com/user-attachments/assets/bfc8ff14-c0de-4790-9e4e-b5b377186815)
+
 # Cookies
 In this project, cookies are used to store user data after they press the "Finish" button. When the user clicks "Edit", the cookies are cleared, allowing for a fresh start. The cookies store the state of the button (whether it is in "Edit" or "Finish" mode), the number of timeline groups, the title of each group, and the height of the line connecting the timeline groups. Additionally, the height of each group's description is saved in cookies.
 
