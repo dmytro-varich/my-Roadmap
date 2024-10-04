@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const descriptionHeight = getCookie(`timelineHeightDescription_${i}`);
             const newGroup = createTimelineGroup(title, description, lineHeight, descriptionHeight);
             
-            // if (i > 0) {
-            //     newGroup.style.marginTop = '-17px';
-            // }
+            if (i > 0) {
+                newGroup.style.marginTop = '-17px';
+            }
 
             timelineSection.appendChild(newGroup);
         }
