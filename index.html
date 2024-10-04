@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <title>My Roadmap</title>
   </head>
   <body>
@@ -83,6 +85,7 @@
           </div>
         </div>
         <div class="setup-section">
+          <button id="pdfButton" class="buttons pdfButton">PDF</button>
           <button id="SaveButton" class="buttons button-save">Finish</button>
         </div>
       </div>
@@ -90,5 +93,6 @@
     <script type="module" src="js/index.js"></script>
     <script type="module" src="js/save_button.js"></script>
     <script type="module" src="js/add_button.js"></script>
+    <script type="module" src="js/download_pdf.js"></script>
   </body>
 </html>

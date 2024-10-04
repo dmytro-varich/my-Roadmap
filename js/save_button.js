@@ -182,5 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const button = document.getElementById('SaveButton');
         button.textContent = isHidden ? 'Edit' : 'Finish';
         button.style.backgroundColor = isHidden ? '#eac300' : '#00ea4a';
+        const pdfButton = document.getElementById('pdfButton');
+        pdfButton.style.display = isHidden ? 'block' : 'none';
     }
 });

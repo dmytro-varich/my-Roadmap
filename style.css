@@ -223,6 +223,17 @@ body {
     border: none; 
 }
 
+.buttons.pdfButton {
+    display: none;
+    /* background: #eac300; */
+    background: #ea0000;
+    margin-top: 30px;
+    /* margin-top: 3%; */
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 135px;
+}
+
 .buttons.button-save {
     display: none;
     /* background: #eac300; */
