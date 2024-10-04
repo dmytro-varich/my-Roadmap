@@ -114,8 +114,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 const line = group.querySelector('.line');
                 
                 let lineHeight;
-                if (isMobile) {lineHeight = line ? line.offsetHeight : 130;}
-                else{ lineHeight = line ? line.offsetHeight : 110;}
+                if (isMobile) {
+                    lineHeight = line && line.offsetHeight ? line.offsetHeight : 130;
+                } else {
+                    lineHeight = line && line.offsetHeight ? line.offsetHeight : 110;
+                }
                 
                 if (input.value.trim() !== "" && textarea.value.trim() === "") {
                     textarea.placeholder = isHidden ? "" : "Describe this waypoint..."; // Remove placeholder in Finish mode
