@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                 let lineHeight;
                 if (isMobile) {lineHeight = line ? line.offsetHeight : 130;}
-                else{ ineHeight = line ? line.offsetHeight : 110;}
+                else{ lineHeight = line ? line.offsetHeight : 110;}
                 
                 if (input.value.trim() !== "" && textarea.value.trim() === "") {
                     textarea.placeholder = isHidden ? "" : "Describe this waypoint..."; // Remove placeholder in Finish mode
