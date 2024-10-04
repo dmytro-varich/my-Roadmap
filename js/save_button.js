@@ -1,11 +1,12 @@
 import { setCookie, deleteCookie, getCookie } from "./cookieUtils.js";
 
 document.addEventListener('DOMContentLoaded', function () {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const button = document.getElementById('SaveButton');
     // let isHidden = false; // Visibility status of elements
     let isHidden = getCookie('buttonState') === 'true';
     updateButtonState(isHidden);
-
+    
     // Function to remove red border on focus or input
     function removeRedBorderOnInput(input) {
         input.addEventListener('focus', function () {
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const remainingGroups = document.querySelectorAll('.timeline-group');
             remainingGroups.forEach((group, index) => {
                 if (index > 0) {
-                    group.style.marginTop = "-30px"; // -17Merge groups without gap
+                    group.style.marginTop = isMobile? "-30px":"-17px"; // Merge groups without gap
                 } else {
                     group.style.marginTop = "0"; // No margin for the first group
                 }
