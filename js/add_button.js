@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const initialLineHeight = isMobile ? 110 : 130;
+        const initialLineHeight = isMobile ? 130 : 110;
         if (savedLineHeight)
         {
             line.style.height = savedLineHeight + "px";
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             textarea.placeholder = "Describe this waypoint...";
             textarea.value = "";
-            textarea.style.height = isMobile ? '110px' : '130px';
+            textarea.style.height = isMobile ? '130px' : '110px';
             newGroup.style.marginTop = "-17px"; // !! 15, 17
 
             // Show the add icon only for the new group
