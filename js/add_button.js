@@ -11,12 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const initialLineHeight = isMobile ? 130 : 110;
-        if (savedLineHeight)
-        {
-            line.style.height = savedLineHeight + "px";
-        } else {
-            line.style.height = initialLineHeight + "px";
-        }
+        let lineHeight = savedLineHeight ? parseInt(savedLineHeight, 10) : initialLineHeight;
+        line.style.height = lineHeight + "px";
         // line.style.display = 'block';
         // console.log(initialLineHeight);
         // line.style.height = initialLineHeight + "px";
