@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             textarea.placeholder = "Describe this waypoint...";
             textarea.value = "";
-            textarea.style.height = isMobile ? '130px' : '0px';
-            newGroup.style.marginTop = "-17px"; // !! 15, 17
+            textarea.style.height = isMobile ? '130px' : '110px';
+            newGroup.style.marginTop = isMobile ? '-30px' : "-17px"; // !! 15, 17
 
             // Show the add icon only for the new group
             newGroup.querySelector('.add-icon').style.display = 'block';
