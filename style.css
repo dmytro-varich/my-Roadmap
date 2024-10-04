@@ -106,6 +106,7 @@ body {
     display: grid;
     /* margin-top: 5%; */
     margin-right: -46%; 
+    position: relative;
 }
 
 .timeline-section {
