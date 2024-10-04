@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const remainingGroups = document.querySelectorAll('.timeline-group');
             remainingGroups.forEach((group, index) => {
                 if (index > 0) {
-                    group.style.marginTop = isMobile? "-30px":"-17px"; // Merge groups without gap
+                    group.style.marginTop = isMobile? "-20px":"-17px"; // Merge groups without gap
                 } else {
                     group.style.marginTop = "0"; // No margin for the first group
                 }
