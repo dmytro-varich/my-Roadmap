@@ -310,6 +310,10 @@ input:-webkit-autofill:active {
         height: 130px;
     }
 
+    .buttons.pdfButton {
+        right: 180;
+    }
+
 }
 
 @media (hover: hover) {
