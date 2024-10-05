@@ -64,14 +64,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 isGroupstoDelete = true;
             }
 
+            groupsToDelete.forEach(group => {
+                group.remove();
+            });
+            
             // Merge remaining groups, removing spacing between them
-            const remainingGroups = document.querySelectorAll('.timeline-group');
+            let remainingGroups = document.querySelectorAll('.timeline-group');
             remainingGroups.forEach((group, index) => {
                 if (index === 0) {
                     group.style.marginTop = "0"; 
                 } 
                 else {
-                    group.style.marginTop = isMobile ? "-20px" : "-17px"; // Для остальных групп, чтобы убрать зазор
+                    group.style.marginTop = isMobile ? "-20px" : "-17px"; 
                 }
             });
 
