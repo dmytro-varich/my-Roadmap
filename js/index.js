@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var description = document.getElementById("enter-description-text");
         var line = document.getElementById("line");
         var save_btn = document.getElementById("SaveButton");
-        var add_icon = document.getElementById("add_icon");
+        var add_icon = document.getElementById("add-icon");
 
         // Make all necessary elements visible
         circle.style.display = "block";

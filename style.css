@@ -16,9 +16,9 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    overflow-x: hidden; /* Убирает горизонтальный скролл */
-    box-sizing: border-box; /* Это убедится, что паддинги и границы включены в ширину и высоту элемента */
-    font-size: 16px; /* base font-size */
+    overflow-x: hidden; 
+    box-sizing: border-box; 
+    font-size: 16px; 
 }
 
 .menu-page {
@@ -125,7 +125,7 @@ body {
 
 .history-point {
     display: flex;
-    flex-direction: column; /* Располагаем элементы вертикально */
+    flex-direction: column; 
     align-items: center;
 }
 
@@ -248,9 +248,9 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px white inset !important; /* Убираем задний фон */
-    -webkit-text-fill-color: #000 !important; /* Цвет текста */
-    transition: background-color 5000s ease-in-out 0s; /* Трюк для сохранения цвета фона */
+    -webkit-box-shadow: 0 0 0 30px white inset !important; 
+    -webkit-text-fill-color: #000 !important; 
+    transition: background-color 5000s ease-in-out 0s; 
 }
 
 .enter-name-text:focus,
@@ -283,7 +283,7 @@ input:-webkit-autofill:active {
     .timeline-group {
         padding-left: calc(var(--mobileGridGap) / 2* 1px);
         padding-right: calc(var(--mobileGridGap) / 2* 1px);
-        margin: 0 auto; /* Центрирование */
+        margin: 0 auto; 
         width: 100%
     }
 
@@ -320,5 +320,59 @@ input:-webkit-autofill:active {
 @media (hover: hover) {
     .button-create:hover {
         background: #0098ea;
+    }
+}
+
+@media print {
+    body {
+        font-size: 10px;
+    }
+    
+    @page {
+        size: A4;
+        margin: 20mm;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    .timeline-section, .timeline-section * {
+        visibility: visible;
+    }
+
+    .timeline-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    .line {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        background-color: #ecf1f7;
+        width: 2px;
+        margin: 0 20px;
+    }
+    
+    .cirle {
+        visibility: visible;
+        display: block;
+        opacity: 1;
+        width: 8px;
+        height: 8px;
+        background-color: #07acff;
+        border-radius: 50%;
+    }
+
+    .add-icon {
+        opacity: 0;
+    }
+
+    .buttons {
+        display: none;
     }
 }
