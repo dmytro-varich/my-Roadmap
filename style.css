@@ -185,6 +185,7 @@ body {
     outline: none;
     width: 13.5vw;
     width: 15vw;
+    width: 25vw;
 }
 
 .enter-name-text::placeholder {

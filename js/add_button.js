@@ -3,44 +3,51 @@ import { getCookie } from "./cookieUtils.js";
 document.addEventListener('DOMContentLoaded', function () {
     const timelineSection = document.querySelector('.timeline-section');
 
-    // Function to extend the line based on textarea content
-    function attachTextareaListener(textarea, line, isMobile, savedLineHeight) {
+    function attachTextareaListener(input, textarea, line, isMobile, savedLineHeight) {
         if (!line) {
             console.error("Don't worry! Line element not found.");
             return;
         }
+        const initialLineHeight = 130; 
+        let currentLineHeight = savedLineHeight ? parseInt(savedLineHeight, 10) : initialLineHeight; 
+        let inputExtended = false; 
+        let textareaExtended = false; 
 
-        const initialLineHeight = 130;
-        let lineHeight = savedLineHeight ? parseInt(savedLineHeight, 10) : initialLineHeight;
-        line.style.height = lineHeight + "px";
-        // line.style.display = 'block';
-        // console.log(initialLineHeight);
-        // line.style.height = initialLineHeight + "px";
-        // const initialLineHeight = line.clientHeight; // Save initial line height
+        line.style.height = currentLineHeight + "px";
 
-        textarea.addEventListener("input", function () {
-            // Automatically adjust textarea height based on content
-            textarea.style.height = "auto";
-            textarea.style.height = (textarea.scrollHeight) + "px";
+        input.addEventListener("input", function () {
+            const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight, 10);
 
-            const percent = 0.7;
-            const distance = 50;
-
-            // Extend the line only if the text height exceeds 80% of the initial line height
-            if (textarea.scrollHeight > initialLineHeight * percent) {
-                // Extend the line by an amount that exceeds 80% of the initial height
-                line.style.height = textarea.scrollHeight + distance + "px"; // Add 10px for margin
-                // animateHeight(line, parseFloat(line.style.height), textarea.scrollHeight + distance, 300); // 300ms for animation
+            if (input.scrollHeight > lineHeight && !inputExtended) {
+                
+                currentLineHeight += 20;
+                inputExtended = true;
+            } else if (input.scrollHeight <= lineHeight && inputExtended) {
+                
+                currentLineHeight -= 20;
+                inputExtended = false;
             }
+            
+            line.style.height = currentLineHeight + "px";
+        });
+        
+        textarea.addEventListener("input", function () {
+            textarea.style.height = "auto"; 
+            textarea.style.height = textarea.scrollHeight + "px"; 
+
+            const extraHeight = 50; 
+
+            line.style.height = (textarea.scrollHeight + extraHeight) + "px";
         });
     }
 
     // Apply listeners to all existing timeline groups
-    document.querySelectorAll('.timeline-group').forEach(function(group, index) {
+    document.querySelectorAll('.timeline-group').forEach(function (group, index) {
+        const input = group.querySelector('.enter-name-text');
         const textarea = group.querySelector('.enter-description-text');
         const line = group.querySelector('.line');
         const savedLineHeight = getCookie(`timelineLineHeight_${index}`);
-        attachTextareaListener(textarea, line, false, savedLineHeight);
+        attachTextareaListener(input, textarea, line, false, savedLineHeight);
     });
 
     timelineSection.addEventListener('click', function(e) {
@@ -83,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Apply listeners to the new textarea and line
             var line = newGroup.querySelector('.line');
-            attachTextareaListener(textarea, line, isMobile, null);
+            attachTextareaListener(input, textarea, line, isMobile, null);
         }
     });
 });
