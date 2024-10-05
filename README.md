@@ -56,4 +56,5 @@ For future updates, several improvements can be made. First, a custom logo and f
 
 ![myRoadmapDB](https://github.com/user-attachments/assets/564d7f8b-40bd-4446-9ebe-dea22e8eaece)
 
-
+# New Features
+1. **Print Button:** The button opens the `print window` and allows you to either print or save your *roadmap* as a PDF after you click the `"Finish"` button.
