@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
             textarea.style.display = 'block';
             
             textarea.style.height = descriptionHeight;
-            textarea.rows = '3';
+            textarea.rows = '2';
             textarea.cols = '40';
 
             input.setAttribute('readonly', true);

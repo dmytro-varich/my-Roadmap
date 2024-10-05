@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const initialLineHeight = 130;
         let currentLineHeight = savedLineHeight ? parseInt(savedLineHeight, 10) : initialLineHeight; 
+
         line.style.height = currentLineHeight + "px"; 
         let minLineHeight = initialLineHeight;
             
@@ -26,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentLineHeight = newLineHeight;
                 line.style.height = currentLineHeight + "px";
             } 
-            
             else if (currentLineHeightFromStyle > newLineHeight && currentLineHeight > minLineHeight) {
                 currentLineHeight = Math.max(minLineHeight, newLineHeight); 
                 line.style.height = currentLineHeight + "px";
