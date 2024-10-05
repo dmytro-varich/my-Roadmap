@@ -148,7 +148,7 @@ body {
     display: none;
     background-color: #ecf1f7;
     width: 2px;
-    height: 110px;
+    height: 130px;
     margin: 0 20px;
     transition: height 0.5s ease-in-out;
 }
@@ -305,10 +305,6 @@ input:-webkit-autofill:active {
         font-size: 1.125rem;
         /* width: 354.4px; */
         width: 95%;
-    }
-
-    .line {
-        height: 130px;
     }
 
     .buttons.pdfButton {

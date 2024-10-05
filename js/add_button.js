@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const initialLineHeight = isMobile ? 130 : 110;
+        const initialLineHeight = 130;
         let lineHeight = savedLineHeight ? parseInt(savedLineHeight, 10) : initialLineHeight;
         line.style.height = lineHeight + "px";
         // line.style.display = 'block';
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
             textarea.style.height = "auto";
             textarea.style.height = (textarea.scrollHeight) + "px";
 
-            const percent = isMobile ? 0.7 : 0.8;
-            const distance = isMobile ? 50 : 30;
+            const percent = 0.7;
+            const distance = 50;
 
             // Extend the line only if the text height exceeds 80% of the initial line height
             if (textarea.scrollHeight > initialLineHeight * percent) {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             textarea.placeholder = "Describe this waypoint...";
             textarea.value = "";
-            textarea.style.height = isMobile ? '120px' : '110px';
+            textarea.style.height = '110px';
             newGroup.style.marginTop = '-20px'; // !! 15, 17
             
             // Show the add icon only for the new group
