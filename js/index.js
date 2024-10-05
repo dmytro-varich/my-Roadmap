@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const newGroup = createTimelineGroup(title, description, lineHeight, descriptionHeight);
             
             if (i > 0) {
-                newGroup.style.marginTop = '-17px';
+                newGroup.style.marginTop = '-20px';
             }
 
             timelineSection.appendChild(newGroup);
