@@ -368,7 +368,20 @@ input:-webkit-autofill:active {
         opacity: 0;
     }
 
+    .enter-description-text {
+        font-size: 0.875rem;
+        line-height: 20px;
+        letter-spacing: -.14px;
+        width: 95%;
+        text-align: justify;
+    }
+
+
     .buttons {
         display: none;
+    }
+
+    * { -webkit-print-color-adjust: exact; 
+        print-color-adjust: exact;
     }
 }
