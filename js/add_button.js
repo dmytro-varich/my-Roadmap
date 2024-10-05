@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error("Don't worry! Line element not found.");
             return;
         }
+
         const initialLineHeight = 130; 
         let currentLineHeight = savedLineHeight ? parseInt(savedLineHeight, 10) : initialLineHeight; 
         let inputExtended = false; 
@@ -19,25 +20,33 @@ document.addEventListener('DOMContentLoaded', function () {
             const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight, 10);
 
             if (input.scrollHeight > lineHeight && !inputExtended) {
-                
-                currentLineHeight += 20;
+                currentLineHeight += 20; 
                 inputExtended = true;
             } else if (input.scrollHeight <= lineHeight && inputExtended) {
-                
-                currentLineHeight -= 20;
+                currentLineHeight -= 20; 
                 inputExtended = false;
             }
             
-            line.style.height = currentLineHeight + "px";
+            line.style.height = currentLineHeight + "px"; 
         });
-        
+
         textarea.addEventListener("input", function () {
             textarea.style.height = "auto"; 
             textarea.style.height = textarea.scrollHeight + "px"; 
 
-            const extraHeight = 50; 
+            const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight, 10); 
 
-            line.style.height = (textarea.scrollHeight + extraHeight) + "px";
+            const linesInTextarea = Math.ceil(textarea.scrollHeight / lineHeight);
+            
+            if (linesInTextarea > 1 && !textareaExtended) {
+                currentLineHeight += 20; 
+                textareaExtended = true;
+            } else if (linesInTextarea <= 1 && textareaExtended) {
+                currentLineHeight -= 20; 
+                textareaExtended = false;
+            }
+
+            line.style.height = currentLineHeight + "px"; 
         });
     }
 
