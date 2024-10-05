@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
             textarea.style.height = (textarea.scrollHeight) + "px";
 
             const percent = isMobile ? 0.8 : 0.7;
-            const distance = isMobile ? 30 : 50;
+            const distance = isMobile ? 50 : 30;
 
             // Extend the line only if the text height exceeds 80% of the initial line height
             if (textarea.scrollHeight > initialLineHeight * percent) {
