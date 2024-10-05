@@ -21,18 +21,15 @@ document.addEventListener('DOMContentLoaded', function () {
             const extraHeight = 50; 
             const newLineHeight = textarea.scrollHeight + extraHeight; 
             const currentLineHeightFromStyle = parseInt(window.getComputedStyle(line).height, 10); 
-
             
             if (currentLineHeightFromStyle < newLineHeight) {
                 currentLineHeight = newLineHeight;
                 line.style.height = currentLineHeight + "px";
-                console.log("Line height increased to:", currentLineHeight);
             } 
             
             else if (currentLineHeightFromStyle > newLineHeight && currentLineHeight > minLineHeight) {
                 currentLineHeight = Math.max(minLineHeight, newLineHeight); 
                 line.style.height = currentLineHeight + "px";
-                console.log("Line height decreased to:", currentLineHeight);
             }
         });
 
