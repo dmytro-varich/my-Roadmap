@@ -9,44 +9,47 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const initialLineHeight = 130; 
+        const initialLineHeight = 130;
         let currentLineHeight = savedLineHeight ? parseInt(savedLineHeight, 10) : initialLineHeight; 
-        let inputExtended = false; 
-        let textareaExtended = false; 
-
-        line.style.height = currentLineHeight + "px";
-
-        input.addEventListener("input", function () {
-            const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight, 10);
-
-            if (input.scrollHeight > lineHeight && !inputExtended) {
-                currentLineHeight += 20; 
-                inputExtended = true;
-            } else if (input.scrollHeight <= lineHeight && inputExtended) {
-                currentLineHeight -= 20; 
-                inputExtended = false;
-            }
+        line.style.height = currentLineHeight + "px"; 
+        let minLineHeight = initialLineHeight;
             
-            line.style.height = currentLineHeight + "px"; 
+        textarea.addEventListener("input", function () {
+            textarea.style.height = "auto";
+            textarea.style.height = textarea.scrollHeight + "px";
+
+            const extraHeight = 50; 
+            const newLineHeight = textarea.scrollHeight + extraHeight; 
+            const currentLineHeightFromStyle = parseInt(window.getComputedStyle(line).height, 10); 
+
+            
+            if (currentLineHeightFromStyle < newLineHeight) {
+                currentLineHeight = newLineHeight;
+                line.style.height = currentLineHeight + "px";
+                console.log("Line height increased to:", currentLineHeight);
+            } 
+            
+            else if (currentLineHeightFromStyle > newLineHeight && currentLineHeight > minLineHeight) {
+                currentLineHeight = Math.max(minLineHeight, newLineHeight); 
+                line.style.height = currentLineHeight + "px";
+                console.log("Line height decreased to:", currentLineHeight);
+            }
         });
 
-        textarea.addEventListener("input", function () {
-            textarea.style.height = "auto"; 
-            textarea.style.height = textarea.scrollHeight + "px"; 
+        input.addEventListener("input", function () {
+            const inputLineHeight = parseInt(window.getComputedStyle(input).lineHeight, 10);
+            const inputScrollHeight = input.scrollHeight;
 
-            const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight, 10); 
-
-            const linesInTextarea = Math.ceil(textarea.scrollHeight / lineHeight);
-            
-            if (linesInTextarea > 1 && !textareaExtended) {
-                currentLineHeight += 20; 
-                textareaExtended = true;
-            } else if (linesInTextarea <= 1 && textareaExtended) {
-                currentLineHeight -= 20; 
-                textareaExtended = false;
+            if (inputScrollHeight > inputLineHeight && minLineHeight === initialLineHeight) {
+                minLineHeight += 20; 
+                currentLineHeight = minLineHeight;
             }
-
-            line.style.height = currentLineHeight + "px"; 
+            else if (inputScrollHeight <= inputLineHeight && minLineHeight > initialLineHeight) {
+                minLineHeight = initialLineHeight;
+                currentLineHeight = minLineHeight;
+            }
+            
+            line.style.height = currentLineHeight + "px";
         });
     }
 
