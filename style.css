@@ -369,6 +369,11 @@ input:-webkit-autofill:active {
         opacity: 0;
     }
 
+    .enter-name-text {
+        font-size: 1rem;
+        line-height: 20px;
+    }
+
     .enter-description-text {
         font-size: 0.875rem;
         line-height: 20px;
